@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
             alert('Incorrect password!');
         } else {
             // Redirect to the chat page or perform other actions
-            window.location.href = "index.html";
+            window.location.href = "./Files/index.js";
         }
     }
 
