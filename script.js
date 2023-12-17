@@ -22,5 +22,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    startChatButton.addEventListener("click", Proceed);
+    startChatButton.addEventListener("click", startChat);
 });
