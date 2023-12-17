@@ -6,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function() {
     function startChat() {
         if (nameInput.value.trim() === "") {
             alert("Please fill the required field.");
-        } else if(nameInput.value.trim() !== "Aabra ka daabra") {
+        } else if(nameInput.value.trim() !== "Alohomora") {
             alert('Incorrect password!');
         } else {
             // Redirect to the chat page or perform other actions
-            window.location.href = "files.html";
+            window.location.href = "files";
         }
     }
 
