@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://i.postimg.cc/Y9vKSfzH/image.png" />
+  <style>
+    :root {
+      --color-bg: #000;
+      --font-family: "HK Grotesk";
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+
+    @font-face {
+      font-family: HK Grotesk;
+      src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027") format("opentype");
+    }
+    
+    body {
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      margin: 0;
+    }
+
+    .wrapper {
+      min-height: 87vh;
+      display: grid;
+      place-items: center;
+      margin: 0 1rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      color: #FF0000;
+      margin: 1rem 0;
+      font-family: var(--font-family);
+      font-weight: bold; 
+    }
+
+    pre {
+      color: #00FF00;
+      margin: 0;
+    }
+  </style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://i.postimg.cc/Y9vKSfzH/image.png" />
+  <title>Project 1</title>
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content" role="main">
+      <div class="instructions">
+        <h2>1. Program to check whether a number is palindrome and prime number using junction code</h2>
+        <pre>
+          <code>
+def is_prime(num):
+    # Check till num/2 because after that it is impossible to find a factor.
+    for i in range(2, int(num / 2) + 1):
+        if num % i == 0:
+            return False
+    return True
+
+
+def is_palindrome(num):
+    rev = 0
+    div = num
+    while div > 0:
+        digit = div % 10
+        # Add the last digit multiplied by 10 to the reverse number.
+        rev = rev * 10 + digit
+        div //= 10
+    return rev == num
+
+
+num = int(input("Enter a number: "))
+print(f"Is {num} prime? : {is_prime(num)}")
+print(f"Is {num} palindrome? : {is_palindrome(num)}")
+
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

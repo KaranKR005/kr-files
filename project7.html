@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://i.postimg.cc/Y9vKSfzH/image.png" />
+  <style>
+    :root {
+      --color-bg: #000;
+      --font-family: "HK Grotesk";
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+
+    @font-face {
+      font-family: HK Grotesk;
+      src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027") format("opentype");
+    }
+    
+    body {
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      margin: 0;
+    }
+
+    .wrapper {
+      min-height: 87vh;
+      display: grid;
+      place-items: center;
+      margin: 0 1rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      color: #FF0000;
+      margin: 1rem 0;
+      font-family: var(--font-family);
+      font-weight: bold; 
+    }
+
+    pre {
+      color: #00FF00;
+      margin: 0;
+    }
+  </style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://i.postimg.cc/Y9vKSfzH/image.png" />
+  <title>Project 7</title>
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content" role="main">
+      <div class="instructions">
+        <h2>7. Write a function sin(x,n) to calculate the value of sin(x) using the Taylor series expansion upto n terms</h2>
+            <pre>
+              <code>
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n - 1)
+
+def sin(x, n):
+    sum = 0
+    for i in range(n + 1):
+        sum += ((-1) ** i) * (x ** ((2 * i) + 1)) / factorial((2 * i) + 1)
+    return sum
+
+x = float(input("Enter the value of x: "))  # Accept floating-point input
+n = int(input("Enter the value of n: "))
+
+value = sin(x, n)
+print(f"The value of sin({x}) for {n} steps is: {value}")
+
+
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

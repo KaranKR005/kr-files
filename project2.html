@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://i.postimg.cc/Y9vKSfzH/image.png" />
+  <style>
+    :root {
+      --color-bg: #000;
+      --font-family: "HK Grotesk";
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+
+    @font-face {
+      font-family: HK Grotesk;
+      src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027") format("opentype");
+    }
+    
+    body {
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      margin: 0;
+    }
+
+    .wrapper {
+      min-height: 87vh;
+      display: grid;
+      place-items: center;
+      margin: 0 1rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      color: #FF0000;
+      margin: 1rem 0;
+      font-family: var(--font-family);
+      font-weight: bold; 
+    }
+
+    pre {
+      color: #00FF00;
+      margin: 0;
+    }
+  </style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://i.postimg.cc/Y9vKSfzH/image.png" />
+  <title>Project 2</title>
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content" role="main">
+      <div class="instructions">
+        <h2>2. Program to check number of alphabets, digits, vowels, lowercase and uppercase characters.</h2>
+        <pre>
+          <code>
+def parse(text):
+alpha = lc = uc = vowel = digit = 0
+for chr in text:
+    if chr.isalpha():
+        alpha += 1
+        if chr.islower():
+            lc += 1
+        elif chr.isupper():
+            uc += 1
+        if chr.lower() in "aeiou":
+            vowel += 1
+    elif chr.isdigit():
+        digit += 1
+return alpha, lc, uc, vowel, digit
+        
+with open("lines.txt", "r") as file:
+    alpha, lc, uc, vowel, digit = parse(file.read())
+    print(f"Number of alphabets: {alpha}")
+    print(f"Number of lowercase characters: {lc}")
+     print(f"Number of uppercase characters: {uc}")
+    print(f"Number of vowels: {vowel}")
+    print(f"Number of digits: {digit}")
+
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

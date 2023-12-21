@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://i.postimg.cc/Y9vKSfzH/image.png" />
+  <style>
+    :root {
+      --color-bg: #000;
+      --font-family: "HK Grotesk";
+    }
+
+    * { box-sizing: border-box; }
+    [hidden] { display: none !important; }
+
+    @font-face {
+      font-family: HK Grotesk;
+      src: url("https://cdn.glitch.me/605e2a51-d45f-4d87-a285-9410ad350515%2FHKGrotesk-Regular.otf?v=1603136326027") format("opentype");
+    }
+    
+    body {
+      font-family: var(--font-family);
+      background-color: var(--color-bg);
+      margin: 0;
+    }
+
+    .wrapper {
+      min-height: 87vh;
+      display: grid;
+      place-items: center;
+      margin: 0 1rem;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    h2 {
+      color: #FF0000;
+      margin: 1rem 0;
+      font-family: var(--font-family);
+      font-weight: bold; 
+    }
+
+    pre {
+      color: #00FF00;
+      margin: 0;
+    }
+  </style>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" href="https://i.postimg.cc/Y9vKSfzH/image.png" />
+  <title>Project 10</title>
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="content" role="main">
+      <div class="instructions">
+        <h2>10. Menu based program to perform queue operations.</h2>
+            <pre>
+              <code>
+class Queue:
+    """
+    Class Queue is a classic implementation of the queue data structure.
+    """
+
+    def __init__(self) -> None:
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def enqueue(self, item):
+        return self.items.append(item)
+
+    def dequeue(self):
+        return self.items.pop(0)
+
+    def peek(self):
+        if len(self.items) == 0:
+            print("Queue is empty.")
+            return None
+        return self.items[-1]
+
+    def size(self):
+        return len(self.items)
+
+
+queue = Queue()
+
+menu = """
+1. Enqueue
+2. Dequeue
+3. Display
+4. Size
+5. Value of rear
+6. Quit
+"""
+print("Menu for queue operations")
+print(menu)
+
+
+def menu_loop():
+    choice = int(input("Enter your choice: "))
+
+    if choice == 1:
+        item = int(input("Enter item to enqueue (integer): "))
+        queue.enqueue(item)
+    elif choice == 2:
+        print(queue.dequeue())
+    elif choice == 3:
+        print(queue.items)
+    elif choice == 4:
+        print(queue.size())
+    elif choice == 5:
+        print(queue.peek())
+    elif choice == 6:
+        exit(0)
+    else:
+        print("You entered a wrong choice.")
+        second_choice = input("Do you want to continue?" + " If so, then type 'yes': ")
+        if second_choice == "yes":
+            menu_loop()
+        else:
+            exit(0)
+    menu_loop()
+
+
+menu_loop()
+
+
+          </code>
+        </pre>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
